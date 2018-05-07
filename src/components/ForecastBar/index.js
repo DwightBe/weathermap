@@ -1,12 +1,9 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import { ContentContainer } from './styles';
 
 class ForecastBar extends React.Component { // eslint-disable-line react/prefer-stateless-function
-  constructor() {
-    super();
-  }
   render() {
-    const {date, weather, description, temp, humidity} = this.props;
+    const {date, weather, description, temp, humidity, high, low} = this.props;
     const weathericon = () => {
     switch(weather){
       case 'Clear':
@@ -25,9 +22,12 @@ class ForecastBar extends React.Component { // eslint-disable-line react/prefer-
         <div>
           {weathericon()}
         </div>
-        <div> {description}</div>
         <h3> {temp}&deg; C</h3>
-        <div> {humidity}% humidity </div>
+        <ul>
+          <li>{humidity}% humidity</li>
+          <li>High: {high}</li>
+          <li>Low: {low}</li>
+        </ul>
       </ContentContainer>
     );
   }

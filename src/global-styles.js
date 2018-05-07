@@ -31,6 +31,10 @@ injectGlobal`
   h1, h2 {
     color: #1d3656;
   }
+  ul{
+    list-style-type: none;
+    padding-left: 0px;
+  }
 
   p,
   label {
