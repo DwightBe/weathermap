@@ -1,4 +1,5 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import PlacesAutocomplete from 'react-places-autocomplete';
 
 class PlacesSearch extends React.Component { // eslint-disable-line react/prefer-stateless-function
@@ -46,5 +47,8 @@ class PlacesSearch extends React.Component { // eslint-disable-line react/prefer
     );
   }
 }
+PlacesSearch.propTypes = {
+  getForecastData: PropTypes.func,
+};
 
 export default PlacesSearch;

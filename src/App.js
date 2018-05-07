@@ -16,6 +16,7 @@ class App extends Component {
 
 	getForecastData = async (city) => {
 		const result = await fetchForecastByCityName(city);
+    console.log('result', result);
 		this.setState({
 			forecast: result.list.map(item => ({
 				date: moment(item.dt * 1000).format('MMMM Do YYYY, h:mm:ss a'),
