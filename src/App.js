@@ -19,7 +19,6 @@ class App extends Component {
 
 	getForecastData = async (city) => {
 		const result = await fetchForecastByCityName(city);
-    console.log('result', result);
 		this.setState({
 			forecast: result.list.map(item => ({
 				date: moment(item.dt * 1000).format('MMMM Do YYYY, h:mm:ss a'),
@@ -64,13 +63,15 @@ class App extends Component {
             </div>
           )}
         </PlacesAutocomplete>
-        {this.state.forecast.map(item => {
+        {this.state.forecast.map((item, key) => {
             return(
               <ForecastBar
+                key = {key}
                 date={item.date}
                 temp={Math.round(item.temp)}
                 humidity={Math.round(item.humidity)}
-                weather={item.weather}
+                weather={item.weather.main}
+                description={item.weather.description}
               />
             )
         })}

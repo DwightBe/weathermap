@@ -1,6 +1,6 @@
 import qs from 'qs';
 
-const apiToken = '48fbf0232188005e22958e2769cb04cc';
+const apiToken = 'da65fafb6cb9242168b7724fb5ab75e7';
 const apiUrl = 'http://api.openweathermap.org/data/2.5';
 
 const fetchApi = (endPoint, payload = {}, method = 'get', headers = {}) => {
