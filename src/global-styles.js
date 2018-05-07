@@ -78,6 +78,21 @@ injectGlobal`
     button:active:after {
   	height: 100%;
   }
+  input {
+			border: none;
+			padding: 10px 15px;
+			width: 400px;
+			outline: none;
+      font-size: 1.2em;
+			line-height: 1.6;
+  }
+  .suggestion-item{
+    backgroundColor: '#fafafa', cursor: 'pointer'
+  }
+  .suggestion-item--active{
+    backgroundColor: '#fff', cursor: 'pointer'
+
+  }
 
 
 `;
