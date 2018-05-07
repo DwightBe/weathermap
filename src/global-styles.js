@@ -42,42 +42,6 @@ injectGlobal`
     }
   }
 
-  button{
-    border: none;
-  	font-family: inherit;
-  	font-size: inherit;
-  	color: #6cb8e2;
-    background-color: #e3edef;
-  	cursor: pointer;
-  	padding: 5px 5px;
-  	display: inline-block;
-  	text-transform: uppercase;
-  	letter-spacing: 3px;
-  	font-weight: 700;
-  	outline: none;
-  	position: relative;
-  	-webkit-transition: all 0.3s;
-  	-moz-transition: all 0.3s;
-  	transition: all 0.3s;
-  }
-
-  button:after {
-	   width: 100%;
-	   height: 0;
-	   top: 0;
-     left: 0;
-	   background: #fff;
-  }
-
-  button:hover,
-    button:active {
-  	color: #0e83cd;
-  }
-
-  button:hover:after,
-    button:active:after {
-  	height: 100%;
-  }
   input {
 			border: none;
 			padding: 10px 15px;
@@ -86,13 +50,27 @@ injectGlobal`
       font-size: 1.2em;
 			line-height: 1.6;
   }
-  .suggestion-item{
-    backgroundColor: '#fafafa', cursor: 'pointer'
-  }
-  .suggestion-item--active{
-    backgroundColor: '#fff', cursor: 'pointer'
+  .autocomplete-dropdown-container{
+    background-color: #ffffff;
+    width: 430px;
+    margin: 0 auto;
+    z-index: 4;
 
   }
+  .suggestion-item{
+    background-color: #ededed;
+    cursor: 'pointer';
+    font-size: 1.2em;
+    line-height: 1.5em;
+  }
+  .suggestion-item--active{
+    background-color: #fafafa;
+    cursor: 'pointer';
+    font-size: 1.2em;
+    line-height: 1.5em;
+  }
+
+
 
 
 `;

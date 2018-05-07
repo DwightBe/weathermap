@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import moment from 'moment';
-import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
+import PlacesAutocomplete from 'react-places-autocomplete';
 import ForecastBar from './components/ForecastBar'
 import { fetchForecastByCityName } from './services/openweathermap';
 
@@ -35,8 +35,6 @@ class App extends Component {
   }
 
   render() {
-    let title = this.state.title;
-    let countries = this.state.countries;
     return (
       <div className="App">
       <h1>Choose a City</h1>
