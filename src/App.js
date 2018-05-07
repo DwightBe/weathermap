@@ -70,9 +70,6 @@ class App extends Component {
             </div>
           )}
         </PlacesAutocomplete>
-        <div className="cityName">
-          <h1>{this.state.city}</h1>
-        </div>
         {this.state.forecast.map(item => {
             return(
               <ForecastBar
