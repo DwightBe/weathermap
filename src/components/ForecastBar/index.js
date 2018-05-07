@@ -8,7 +8,7 @@ class ForecastBar extends React.Component { // eslint-disable-line react/prefer-
   render() {
     const {date, weather, description, temp, humidity} = this.props;
     const weathericon = () => {
-    switch(weather.main){
+    switch(weather){
       case 'Clear':
         return <img className='weathericon' src='https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-01-256.png' />
       case 'Clouds':
