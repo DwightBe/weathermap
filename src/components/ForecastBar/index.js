@@ -1,4 +1,5 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { ContentContainer } from './styles';
 
 class ForecastBar extends React.Component { // eslint-disable-line react/prefer-stateless-function
@@ -32,5 +33,15 @@ class ForecastBar extends React.Component { // eslint-disable-line react/prefer-
     );
   }
 }
+
+ForecastBar.propTypes = {
+  date: PropTypes.string,
+  weather: PropTypes.string,
+  description: PropTypes.string,
+  temp: PropTypes.number,
+  humidity: PropTypes.number,
+  high: PropTypes.number,
+  low: PropTypes.number,
+};
 
 export default ForecastBar;
