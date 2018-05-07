@@ -16,7 +16,6 @@ class ForecastBar extends React.Component { // eslint-disable-line react/prefer-
         return <img className='weathericon' src='https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-31-256.png' />
       }
     }
-    console.log(weathericon)
     return (
       <ContentContainer>
         <h2>{this.props.date}</h2>
