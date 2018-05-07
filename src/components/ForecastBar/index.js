@@ -9,6 +9,8 @@ class ForecastBar extends React.Component { // eslint-disable-line react/prefer-
     return (
       <ContentContainer>
         <h2>{this.props.date}</h2>
+        <div> {this.props.weather.main}</div>
+        <div> {this.props.weather.description}</div>
         <div> {this.props.temp}&deg;</div>
         <div> {this.props.humidity}% humidity </div>
       </ContentContainer>

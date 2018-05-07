@@ -17,8 +17,8 @@ class App extends Component {
 
   }
 
-	getForecastData = async () => {
-		const result = await fetchForecastByCityName(this.state.city);
+	getForecastData = async (city) => {
+		const result = await fetchForecastByCityName(city);
     console.log('result', result);
 		this.setState({
 			forecast: result.list.map(item => ({
@@ -34,11 +34,6 @@ class App extends Component {
     this.setState({city});
   }
 
-  handleSelect = (city) => {
-    this.setState({city});
-  }
-
-
   render() {
     let title = this.state.title;
     let countries = this.state.countries;
@@ -48,7 +43,7 @@ class App extends Component {
         <PlacesAutocomplete
           value={this.state.city}
           onChange={this.handleChange}
-          onSelect={this.handleSelect}
+          onSelect={this.getForecastData}
         >
           {({ getInputProps, suggestions, getSuggestionItemProps }) => (
             <div>
@@ -75,9 +70,8 @@ class App extends Component {
             </div>
           )}
         </PlacesAutocomplete>
-        <button onClick={this.getForecastData}>Choose City</button>
         <div className="cityName">
-          <span>{this.state.city}</span>
+          <h1>{this.state.city}</h1>
         </div>
         {this.state.forecast.map(item => {
             return(
@@ -85,12 +79,11 @@ class App extends Component {
                 date={item.date}
                 temp={Math.round(item.temp)}
                 humidity={Math.round(item.humidity)}
+                weather={item.weather}
               />
             )
         })}
-
       </div>
-
     );
   }
 }
