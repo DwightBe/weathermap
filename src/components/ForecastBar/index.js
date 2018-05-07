@@ -24,7 +24,7 @@ class ForecastBar extends React.Component { // eslint-disable-line react/prefer-
           {weathericon()}
         </div>
         <div> {this.props.weather.description}</div>
-        <div> {this.props.temp}&deg;</div>
+        <h3> {this.props.temp}&deg; C</h3>
         <div> {this.props.humidity}% humidity </div>
       </ContentContainer>
     );
