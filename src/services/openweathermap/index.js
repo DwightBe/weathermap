@@ -1,7 +1,7 @@
 import qs from 'qs';
 
 const apiToken = 'da65fafb6cb9242168b7724fb5ab75e7';
-const apiUrl = 'http://api.openweathermap.org/data/2.5';
+const apiUrl = 'http://api.openweathermap.org/data/2.5/';
 
 const fetchApi = (endPoint, payload = {}, method = 'get', headers = {}) => {
 	const request = {
@@ -15,6 +15,8 @@ const fetchApi = (endPoint, payload = {}, method = 'get', headers = {}) => {
 	const requestUrl = `${apiUrl}${endPoint}?APPID=${apiToken}${
 		(method === 'get') ? `&${qs.stringify(payload)}` : ''
 	}`;
+
+	console.log('requesturl', requestUrl);
 
 	return fetch(requestUrl, request)
 	.then(response => (
@@ -40,4 +42,4 @@ const fetchApi = (endPoint, payload = {}, method = 'get', headers = {}) => {
 	});
 }
 
-export const fetchForecastByCityName = cityName => fetchApi(`/forecast`, { q: cityName, units: 'metric' });
+export const fetchForecastByCityName = cityName => fetchApi(`/forecast/daily`, { q: cityName, units: 'metric' });

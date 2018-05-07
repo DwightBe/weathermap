@@ -20,11 +20,11 @@ class App extends Component {
 		this.setState({
 			forecast: result.list.map(item => ({
 				date: moment(item.dt * 1000).format('MMMM Do YYYY, h:mm:ss a'),
-				temp: item.main.temp,
-				humidity: item.main.humidity,
+				temp: item.temp.day,
+				humidity: item.humidity,
 				weather: item.weather[0],
-        high: item.main.temp_max,
-        low: item.main.temp_min
+        high: item.temp.max,
+        low: item.temp.min
 			}))
 		});
 	}
