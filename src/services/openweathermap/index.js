@@ -16,8 +16,6 @@ const fetchApi = (endPoint, payload = {}, method = 'get', headers = {}) => {
 		(method === 'get') ? `&${qs.stringify(payload)}` : ''
 	}`;
 
-	console.log('requesturl', requestUrl);
-
 	return fetch(requestUrl, request)
 	.then(response => (
 		response.json()
